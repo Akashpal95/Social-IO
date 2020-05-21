@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000; //port 80 for production level code
-
+//app.use(express.urlencoded());
 
 app.use('/', require('./routes'))
 

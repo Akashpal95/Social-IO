@@ -5,5 +5,10 @@ const homeController = require('../controllers/home_controller');
 console.log('Router Loaded');
 
 router.get('/', homeController.home);
+router.get('/contact', homeController.contact);
+router.use('/users', require('./users'));
+
+//For any further routes access from here
+//router.use('/routername', require('./routerfile'));
 
 module.exports = router;
