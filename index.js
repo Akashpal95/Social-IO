@@ -2,10 +2,14 @@ const express = require('express');
 const app = express();
 const port = 8000; //port 80 for production level code
 const expressLayouts = require('express-ejs-layouts')
+const cookieParser = require('cookie-parser')
+const db = require('./config/mongoose');
 
+app.use(express.urlencoded());
+app.use(cookieParser());
 app.use(express.static('./assets'));
 app.use(expressLayouts);//Put this line always before routes
-app.use('/', require('./routes'))
+app.use('/', require('./routes'));
 
 //Extract Style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
