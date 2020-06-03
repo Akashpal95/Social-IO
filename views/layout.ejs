@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <%- style%>
 </head>
 <body>
     <%- include('_header');%>
     
-    <%- body%>
+    <main id="layout-main">
+        <%- body%>
+    </main>
     <!-- <script src="script.js"></script> -->
     <%- include('_footer');%>
     <%-script%>

@@ -1,17 +1,12 @@
 
-    <h1>Codeial/ <%= title%></h1>
-    <form action="/posts/status" method="POST">
-        <input id ="status-input" type="text" name ="status" placeholder="Status" required>
-        <button type="submit">Post status</button>
-    </form>
-    <%if(locals.status){%>
-        <p>
-                <%=locals.status %>
-            </p>
-    <%}else{%>
-        <p>
-            nothing
-        </p>
-
-    <%}%>
+    <h1>
+        Codeial/ <%= title%>
+    </h1>
+    <section id = "feed-posts">
+        <h4>Posts</h4>
+        <form action="" id="new-post-form" method="POST">
+            <textarea name="content" cols="30" rows="3"></textarea>
+            <input type="submit" value = "Post">
+        </form>
+    </section>
     <!-- <script src="script.js"></script> -->
