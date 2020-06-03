@@ -9,18 +9,20 @@ passport.use(new LocalStrategy({
     usernameField: 'email'  
     },
     //done is a call back function
+    //if the user is found it is returned through this call back function
     function(email, password, done){
         
-        //find a user and establish
+        //find a user and establish identity
         User.findOne({email:email}, function(err, user){
             if(err){
                 console.log('Error in finding user --> passport');
-                return done(err);//done takes 2 argument : 1 is error, 2 is authentication Status
+                return done(err);//done takes 2 argument : 1 is error, 2 is user(No user here and js is capable of taking one argument even when two are mentioned)
             }
             if(!user || user.password != password){
                 console.log('Invalid Username/Password');
-                return done(null, false);//done takes 2 argument : 1 is error, 2 is authentication Status
+                return done(null, false);//done takes 2 argument : 1 is error, 2 is user(here it is false because no user is found)
             }
+            //the user is found and sent
             return done(null, user);
         });
     }
@@ -42,6 +44,24 @@ passport.deserializeUser(function(id, done){
         return done(null, user);//done takes 2 argument : 1 is error, 2 is user found
     });
 });
+
+
+passport.checkAuthentication = function(req, res, next){
+    //if the user is signed in then pass on the request ot next function which is my controller function
+    if (req.isAuthenticated()){
+        return next();
+    }
+    //if the user is not signed in
+    return res.redirect('/users/sign-in');
+}
+
+passport.setAuthenticatedUser = function(req, res, next){
+    if(req.isAuthenticated()){
+        //req.user containes the currentsigned in user from the session cookie and we are just sending this to the locals for the views
+        res.locals.user = req.user;
+    }
+    next();
+}
 
 module.exports = passport;
 
