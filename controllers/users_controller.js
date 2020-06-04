@@ -2,19 +2,26 @@ const User = require('../models/user');
 
 
 module.exports.profile = function(req, res){
-    // User.findById(req.params.id, function(err, user){
-    //     return res.render('user_profile', {
-    //         title: 'Codeial | User Profile',
-    //         profile_user:user
-    //     })
+    User.findById(req.params.id, function(err, user){
+        return res.render('user_profile', {
+            title: 'Codeial | User Profile',
+            profile_user:user
+        })
 
-    // });
-    return res.render('user_profile', {
-                title: 'Codeial | User Profile'
-            })
-    
+    });    
 }
 
+module.exports.update = function(req, res){
+    if(req.user.id == req.params.id){
+        //req.body can be sent or expanded for {name:req.body.name, email:req.body.email} which is basically same as req.body
+        User.findByIdAndUpdate(req.params.id, req.body,function(err, user){
+            return res.redirect('back');
+        });
+    }else{
+        //If update fails return http status code for error
+        return res.status(401).send('Unauthorised');
+    }
+}
 
 // render the sign up page
 module.exports.signUp = function(req, res){
