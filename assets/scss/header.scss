@@ -1,5 +1,5 @@
 header{
-    font-style: monospace;
+    // font-family:monospace ;
     font-size:2rem;
     font-weight: 600;
     letter-spacing: 0.05rem;
@@ -9,6 +9,9 @@ header{
     justify-content: space-between;
     align-items: center;
     padding:5px;
+    position:fixed;
+    top:0;
+    width:100%;
     a{
         text-decoration: none;
         color:inherit;

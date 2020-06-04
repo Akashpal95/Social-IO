@@ -55,6 +55,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Sets the user from the session cookie to locals
 app.use(passport.setAuthenticatedUser);
 
 //use express router

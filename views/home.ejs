@@ -4,25 +4,26 @@
     </h1>
     <section id = "feed-posts">
         <h4>Posts</h4>
+        <% if(locals.user){%>
         <form action="/posts/create" id="new-post-form" method="POST">
-            <textarea name="content" cols="30" rows="3" placeholder="What's on your mind?"></textarea>
+            <textarea name="content" cols="30" rows="3" placeholder="What's on your mind?" required></textarea>
             <input type="submit" value = "Post">
         </form>
+        <%}%>
         <hr>
         <div id ="posts-list-container">
             <ul>
                 <% for(post of posts) {%>
-                    <li>
-                        <p>
-                            <%= post.content%>
-                            <br>
-                            <small>
-                                -<%= post.user.name%>
-                            </small>
-                        </p>
-                    </li>
+                    <%- include('_post.ejs');%>
                 <%}%>
             </ul>
         </div>
     </section>
-    <!-- <script src="script.js"></script> -->
+    <section id="user-friends">
+        <h4>Friends</h4>
+        <% for (user of all_users){%>
+            <p>
+                <a href="/users/profile/<%= user.id%>"><%=user.name%></a>
+            </p>
+        <%}%>
+    </section>
