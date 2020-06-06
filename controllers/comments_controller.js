@@ -31,6 +31,7 @@ module.exports.destroy = function(req, res){
         if(comment.user == req.user.id){
             let postId = comment.postl
             comment.remove();
+            //$pull is required to remove a single item inside comments array in Post db
             Post.findByIdAndUpdate(postId, { $pull : {comments: req.params.id}}, function(err){
                 return res.redirect('back');
             });
