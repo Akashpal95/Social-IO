@@ -62,10 +62,11 @@ module.exports.create = async function(req, res){
         if (!user){
             User.create(req.body, function(err, user){
                 if(err){console.log('error in creating user while signing up'); return}
-
+                req.flash('success', 'You have signed up successfully!')
                 return res.redirect('/users/sign-in');
             })
         }else{
+            req.flash('error', err);
             console.log(user);
             return res.redirect('back');
         }

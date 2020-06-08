@@ -12,13 +12,14 @@ module.exports.create = async function(req, res){
                 user:req.user._id,
                 post: req.body.post
             });
-
+            req.flash('success', 'Comment added Successfully!')
             post.comments.push(comment);
             post.save();
 
         }
         return res.redirect('back');
     }catch(err){
+        req.flash('error', err);
         console.log('Error : ', err);
         return;
     }
@@ -33,11 +34,14 @@ module.exports.destroy = async function(req, res){
             comment.remove();
             //$pull is required to remove a single item inside comments array in Post db
             let post = await Post.findByIdAndUpdate(postId, { $pull : {comments: req.params.id}});
+            req.flash('success', 'Comment deleted!')
             return res.redirect('back');
         }else{
+            req.flash('error', 'You cannot delete this comment!')
             return res.redirect('back');
         }
     }catch(error){
+        req.flash('error', err);
         console.log('Error : ', err);
         return;
     }
