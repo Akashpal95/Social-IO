@@ -6,19 +6,22 @@ const User = require('../models/user')
 
 //authentication using passport
 passport.use(new LocalStrategy({
-    usernameField: 'email'  
+    usernameField: 'email',
+    passReqToCallback:true //let's us pass the req object to the call back function
     },
     //done is a call back function
     //if the user is found it is returned through this call back function
-    function(email, password, done){
+    function(req,email, password, done){
         
         //find a user and establish identity
         User.findOne({email:email}, function(err, user){
             if(err){
+                req.flash('error', err);
                 console.log('Error in finding user --> passport');
                 return done(err);//done takes 2 argument : 1 is error, 2 is user(No user here and js is capable of taking one argument even when two are mentioned)
             }
             if(!user || user.password != password){
+                req.flash('error', 'Invalid Username/Password');
                 console.log('Invalid Username/Password');
                 return done(null, false);//done takes 2 argument : 1 is error, 2 is user(here it is false because no user is found)
             }
