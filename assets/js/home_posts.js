@@ -9,7 +9,7 @@
             layout:'topRight',
             timeout:1500
         }).show();
-}
+    }
 
     let allPostEventSetter =  function(){
         //Setting event on all delete links

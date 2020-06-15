@@ -5,12 +5,19 @@ const port = 8000; //port 80 for production level code
 const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session');
 const passport = require('passport');
+
+//Although these are not directly being used here, it needs to loaded here to work
 const passportLocal = require('./config/passport-local-strategy');
+const passportJWT = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+
 const db = require('./config/mongoose');
 const MongoStore = require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
+
+
 
 app.use(sassMiddleware({
     src: './assets/scss',
@@ -24,6 +31,9 @@ app.use(cookieParser());
 
 
 app.use(express.static('./assets'));
+//make the uploads folder available to browser
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 app.use(expressLayouts);//Put this line always before routes
 
 
