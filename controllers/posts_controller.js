@@ -37,6 +37,7 @@ module.exports.destroy = async function(req, res){
             post.remove();
             await Comment.deleteMany({post:req.params.id});
             
+            //To check if request is for API
             if(req.xhr){
                 return res.status(200).json({
                     data:{

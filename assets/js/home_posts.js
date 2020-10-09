@@ -49,6 +49,9 @@
                             <a class="delete-post-button" href="/posts/destroy/${data.post._id}">X</a>
                         </small>
                         ${data.post.content}
+                        <form action="/likes/toggle/?id=${data.post._id}&type=Post" method="POST">
+                            <button type="submit" >Like</button>
+                        </form>
                         <br>
                         <small>
                             -${ data.username}

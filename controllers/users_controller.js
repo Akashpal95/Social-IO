@@ -1,4 +1,7 @@
 const User = require('../models/user');
+const RPT = require('../models/reset_password_token');
+const resetPasswordMailer = require('../mailers/reset_password_mailer');
+const crypto = require('crypto');
 //filesystem module
 const fs = require('fs');
 const path = require('path');
@@ -123,4 +126,75 @@ module.exports.destroySession = function(req, res){
     req.logout();
     req.flash('success', 'You have logged out');
     return res.redirect('/');
+}
+
+module.exports.forgotPassword = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
+    return res.render('find_account');
+}
+
+module.exports.findAccount = async function(req, res){
+    console.log(req.body);
+    try{
+        let user = await User.findOne(req.body);
+        console.log(user);
+        if(user){
+            let token = await RPT.create({
+                accessToken: crypto.randomBytes(20).toString('hex'),
+                user:user._id
+            })
+            console.log(token);
+            resetPasswordMailer.resetPassword(user, token);
+        }else{
+            console.log('User not found');
+        }
+        res.redirect('back');
+    }catch(err){
+        console.log('Error in finding account to reset password: ', err);
+        return res.redirect('back');
+    }    
+}
+
+module.exports.resetPasswordCheck = async function(req, res){
+    try{
+        let token = await RPT.findOne({accessToken:req.params.accessToken});
+        if(token && token.isValid){
+            let user = await User.findById(token.user);
+            console.log(user);
+            console.log('User ID : ', user._id);
+            return res.render('reset_password', {
+                userID : user._id,
+                tokenID: token._id
+            })
+            
+            // return res.redirect('/users/sign-in');
+        }else{
+            console.log('Token doesn\'t exist or it has expired');
+            return res.redirect('/');
+        }
+    }catch(err){
+        console.log('Error in reset password check: ', err);
+        return res.redirect('/');
+    }      
+}
+
+module.exports.resetPassword = async function(req, res){
+    console.log(req.body);
+    if (req.body.password != req.body.confirm_password){
+        return res.redirect('back');
+    }
+    let user = await User.findById(req.body.userID);
+    user.password = req.body.password;
+    user.save();
+    RPT.findByIdAndDelete(req.body.tokenID, function (err, docs) { 
+        if (err){ 
+            console.log(err) 
+        } 
+        else{ 
+            console.log("Deleted : ", docs); 
+        } 
+    });
+    res.redirect('/users/sign-in');
 }

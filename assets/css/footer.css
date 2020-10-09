@@ -4,6 +4,9 @@ footer {
   background-color: #005c85;
   color: #9dfed0;
   display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   padding: 5px; }
   footer * {
     margin: 0; }
