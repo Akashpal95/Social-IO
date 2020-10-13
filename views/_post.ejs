@@ -5,16 +5,17 @@
                 <a class="delete-post-button" href="/posts/destroy/<%=post.id%>">X</a>
             </small>
             <%}%>
+            <small>
+                    <%= post.user.name%> says :
+            </small>
             <%= post.content%>
+            
             <% if(locals.user){%>
-                    <form action="/likes/toggle/?id=<%=post.id%>&type=Post" method="POST">
-                        <button type="submit" >Like</button>
+                    <form class="like-button-form" action="/likes/toggle/?id=<%=post.id%>&type=Post" method="POST">
+                        <span id="like-<%=post.id%>"><%=post.likes.length%></span>&nbsp;<button type="submit" >Like</button>
                     </form>
                 <%}%>
             <br>
-            <small>
-                -<%= post.user.name%>
-            </small>
         </p>
         <div id="post-comments">
                 <div class="post-comments-list">

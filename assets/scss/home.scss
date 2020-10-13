@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  width: 100%;
+}
+
+.vertical {
+  border-left: 1px solid rgb(49, 49, 49);
+  height: 100%;
+  //   position: absolute;
+  //   left: 50%;
+}
+
+main > section {
+  //   flex-grow: 2;
+  width: 70%;
+}
+aside {
+  width: 30%;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+}

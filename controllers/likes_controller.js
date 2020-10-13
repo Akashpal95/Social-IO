@@ -42,19 +42,21 @@ module.exports.toggleLike = async function(req, res) {
       likeable.likes.push(newLike._id);
       likeable.save();
     }
+    if (req.xhr) {
+      return res.status(200).json({
+        message: "Like Request Successfull!",
+        data: {
+          likesNum: likeable.likes.length,
+          id: req.query.id
+        }
+      });
+    }
 
-    // return res.status(200).json({
-    //   message: "Like Request Successfull!",
-    //   data: {
-    //     deleted: deleted
-    //   }
-    // });
     return res.redirect("back");
   } catch (err) {
-    console.log(err);
     req.flash("error", "Hmm! It seems the like button isn't working.");
-    console.log("Error : ", err);
-    return res.redirect("back");
+    console.log("Error in Liking post: ", err);
+    return;
     // return res.status(500).json({
     //   message: "Internal Server Error!"
     // });
