@@ -51,5 +51,6 @@ router.post('/reset-password', usersController.resetPassword);
 
 //To add friends
 router.get('/add-friend/:friend_id', usersController.addFriend);
+router.get('/remove-friend/:friend_id', usersController.removeFriend);
 
 module.exports = router;

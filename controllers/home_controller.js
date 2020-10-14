@@ -16,7 +16,17 @@ module.exports.home = async function(req, res) {
       });
 
     let users = await User.find({});
-
+    if (req.isAuthenticated()) {
+      let user = await User.findById(req.user.id).populate({
+        path: 'friends'
+      });
+      return res.render('home', {
+        title: 'Codeial | home',
+        posts: posts,
+        all_users: users,
+        friends: user.friends
+      });
+    }
     return res.render('home', {
       title: 'Codeial | home',
       posts: posts,

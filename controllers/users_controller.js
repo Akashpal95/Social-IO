@@ -200,8 +200,8 @@ module.exports.resetPassword = async function(req, res) {
 };
 
 module.exports.addFriend = async function(req, res) {
-  console.log(req.params.friend_id);
-  console.log(req.user.id);
+  //   console.log(req.params.friend_id);
+  //   console.log(req.user.id);
   try {
     let existingFriendship = await Friendship.findOne({
       from_user: req.user.id,
@@ -219,7 +219,7 @@ module.exports.addFriend = async function(req, res) {
       to_user.friends.push(from_user._id);
       from_user.save();
       to_user.save();
-      req.flash('success', 'Successfully added as friend!');
+      req.flash('success', 'Successfully added as Friend!');
       if (req.xhr) {
         return res.status(200).json({
           message: 'Added as friend Successfully!',
@@ -229,7 +229,7 @@ module.exports.addFriend = async function(req, res) {
         });
       }
     } else {
-      req.flash('error', 'Already a friend!');
+      req.flash('info', 'Already a friend!');
       if (req.xhr) {
         return res.status(409).json({
           message: 'Already a friend!',
@@ -241,6 +241,56 @@ module.exports.addFriend = async function(req, res) {
     }
     return res.redirect('back');
   } catch {
+    req.flash('error', 'Error in Adding Friend!');
+    console.log('Error in adding Friend: ', err);
+    return res.redirect('back');
+  }
+};
+
+module.exports.removeFriend = async function(req, res) {
+  try {
+    let existingFriendship1 = await Friendship.findOne({
+      from_user: req.user.id,
+      to_user: req.params.friend_id
+    });
+    let existingFriendship2 = await Friendship.findOne({
+      from_user: req.params.friend_id,
+      to_user: req.user.id
+    });
+    let existingFriendship = existingFriendship1 || existingFriendship2;
+    console.log(existingFriendship);
+    if (existingFriendship) {
+      let from_user = await User.findById(existingFriendship.from_user);
+      let to_user = await User.findById(existingFriendship.to_user);
+      from_user.friends.pull(existingFriendship.to_user);
+      to_user.friends.pull(existingFriendship.from_user);
+      from_user.save();
+      to_user.save();
+
+      existingFriendship.remove();
+      req.flash('success', 'Successfully Removed from Friendlist!');
+      if (req.xhr) {
+        return res.status(200).json({
+          message: 'Successfully Removed from Friendlist!',
+          data: {
+            isfriend: true
+          }
+        });
+      }
+    } else {
+      req.flash('info', 'Already removed!');
+      if (req.xhr) {
+        return res.status(409).json({
+          message: 'Already removed!',
+          data: {
+            isfriend: true
+          }
+        });
+      }
+    }
+    return res.redirect('back');
+  } catch (err) {
+    req.flash('error', 'Error in Removing Friend!');
     console.log('Error in adding Friend: ', err);
     return res.redirect('back');
   }
