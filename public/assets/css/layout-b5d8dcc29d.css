@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  /* text-align: center; */ }
+  body #layout-main {
+    height: 100%; }
