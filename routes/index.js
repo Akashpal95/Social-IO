@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const homeController = require("../controllers/home_controller");
-router.use(express.urlencoded());
+router.use(express.urlencoded({ extended: false }));
 console.log("Router Loaded");
 
 router.get("/", homeController.home);

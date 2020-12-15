@@ -25,9 +25,9 @@ const development = {
             pass: 'Yourpassword'
         }
     },
-    google_clientID: "243803917200-d2k6j9jk54t8dv9sj5bdjaafqnjos3nb.apps.googleusercontent.com",
-    google_clientSecret: "ooIQ0lO-d3UfWXgJpA246MpY",
-    google_callbackURL: "http://localhost:8000/users/auth/google/callback",
+    google_clientID: "your_client_id",
+    google_clientSecret: "your_client_secret",
+    google_callbackURL: "your_callback_url",
     jwt_secret: 'codeial',
     morgan: {
         mode: 'dev',
