@@ -2,8 +2,8 @@ header {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
-  background-color: #005c85;
-  color: #9dfed0;
+  background-color: var(--darkblack);
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +19,9 @@ header {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0;
+    margin-right: 20px;
     font-weight: 100;
-    font-size: 1rem; }
+    font-size: 1rem;
+    padding-inline-start: 0 !important; }

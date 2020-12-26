@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="<%= assetPath('css/layout.css')%>" />
   <link rel="stylesheet" type="text/css" href="<%= assetPath('css/header.css')%>" />
   <link rel="stylesheet" type="text/css" href="<%= assetPath('css/footer.css')%>" />
@@ -23,7 +26,6 @@
     <%- body%>
   </main>
   <!-- <script src="script.js"></script> -->
-  <%- include('_footer');%>
   <%-script%>
   <script>
       <% if (flash.success && flash.success.length > 0) {%>

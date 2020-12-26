@@ -1,17 +1,114 @@
-::1 - - [15/Dec/2020:07:56:26 +0000] "GET / HTTP/1.1" 200 6919 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:56:28 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:56:30 +0000] "GET /users/forgot-password HTTP/1.1" 200 1557 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:56:37 +0000] "POST /users/find-account HTTP/1.1" 302 130 "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:56:37 +0000] "GET /users/forgot-password HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:57:52 +0000] "GET /users/forgot-password HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:57:53 +0000] "GET /users/forgot-password HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:58:03 +0000] "POST /users/find-account HTTP/1.1" 302 130 "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:07:58:03 +0000] "GET /users/forgot-password HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:01:05 +0000] "GET /users/forgot-password HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:01:10 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:01:12 +0000] "GET /users/auth/google HTTP/1.1" 302 0 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:07:08 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:07:33 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:07:34 +0000] "GET /users/forgot-password HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:07:36 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/users/forgot-password" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
-::1 - - [15/Dec/2020:08:07:38 +0000] "GET /users/auth/google HTTP/1.1" 302 0 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+[0mGET / [32m200[0m 47.770 ms - 24683[0m
+[0mGET / [32m200[0m 55.542 ms - 24683[0m
+[0mGET / [32m200[0m 55.743 ms - 24683[0m
+[0mGET / [32m200[0m 53.837 ms - 24683[0m
+[0mGET / [32m200[0m 74.599 ms - 24683[0m
+[0mGET / [32m200[0m 55.157 ms - 24683[0m
+[0mGET / [32m200[0m 59.412 ms - 24683[0m
+[0mGET / [32m200[0m 59.293 ms - 24683[0m
+[0mGET / [32m200[0m 57.656 ms - 24683[0m
+[0mGET / [32m200[0m 48.104 ms - 24683[0m
+[0mGET / [32m200[0m 64.532 ms - 24683[0m
+[0mGET / [32m200[0m 44.464 ms - 24683[0m
+[0mGET / [32m200[0m 47.399 ms - 24683[0m
+[0mGET / [32m200[0m 56.862 ms - 24683[0m
+[0mGET / [32m200[0m 54.786 ms - 24683[0m
+[0mGET / [32m200[0m 47.480 ms - 24683[0m
+[0mGET / [32m200[0m 71.758 ms - 24683[0m
+[0mGET / [32m200[0m 45.315 ms - 24683[0m
+[0mGET / [32m200[0m 51.382 ms - 24587[0m
+[0mGET / [32m200[0m 52.610 ms - 24587[0m
+[0mGET / [32m200[0m 51.058 ms - 24479[0m
+[0mGET / [32m200[0m 47.443 ms - 24479[0m
+[0mGET / [32m200[0m 127.948 ms - 24383[0m
+[0mPOST /posts/create [32m200[0m 22.409 ms - 481[0m
+[0mGET / [32m200[0m 152.889 ms - 26231[0m
+[0mPOST /posts/create [32m200[0m 21.259 ms - 299[0m
+[0mGET /posts/destroy/5fe63438595ca79b2086446b [32m200[0m 20.165 ms - 72[0m
+[0mGET /posts/destroy/5fe6340a23fe659ac2655e34 [32m200[0m 27.727 ms - 72[0m
+[0mGET /posts/destroy/5fe4fba498b4de3438cf8c5a [32m200[0m 25.852 ms - 72[0m
+[0mPOST /comments/create [32m200[0m 26.800 ms - 356[0m
+[0mPOST /comments/create [32m200[0m 17.082 ms - 349[0m
+[0mGET / [32m200[0m 126.313 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 30.840 ms - 93[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 21.291 ms - 93[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 15.783 ms - 93[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 16.528 ms - 93[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 15.681 ms - 93[0m
+[0mGET / [32m200[0m 60.978 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 14.650 ms - 93[0m
+[0mGET / [32m200[0m 230.984 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [36m302[0m 50.925 ms - 88[0m
+[0mGET / [32m200[0m 61.243 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [36m302[0m 27.214 ms - 88[0m
+[0mGET / [32m200[0m 80.487 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe62f57e10cc49533eab1ea&type=Post [36m302[0m 92.706 ms - 88[0m
+[0mGET / [32m200[0m 71.834 ms - 24030[0m
+[0mGET / [32m200[0m 83.158 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 22.483 ms - 93[0m
+[0mGET / [32m200[0m 111.343 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 29.027 ms - 114[0m
+[0mPOST /likes/toggle/?id=5fe62f57e10cc49533eab1ea&type=Post [32m200[0m 70.574 ms - 111[0m
+[0mPOST /likes/toggle/?id=5fe62f57e10cc49533eab1ea&type=Post [32m200[0m 27.689 ms - 111[0m
+[0mGET / [32m200[0m 144.526 ms - 24030[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 37.216 ms - 114[0m
+[0mPOST /likes/toggle/?id=5fe63456595ca79b2086446c&type=Comment [32m200[0m 24.394 ms - 114[0m
+[0mGET / [32m200[0m 76.300 ms - 24058[0m
+[0mGET / [32m200[0m 66.134 ms - 24058[0m
+[0mGET / [32m200[0m 62.978 ms - 24058[0m
+[0mGET / [32m200[0m 73.024 ms - 26518[0m
+[0mGET /comments/destroy/5fe63456595ca79b2086446c [32m200[0m 49.506 ms - 79[0m
+[0mPOST /comments/create [32m200[0m 19.855 ms - 356[0m
+[0mGET / [32m200[0m 65.033 ms - 25934[0m
+[0mGET / [32m200[0m 68.256 ms - 26121[0m
+[0mGET / [32m200[0m 65.526 ms - 26121[0m
+[0mGET / [32m200[0m 69.260 ms - 26121[0m
+[0mGET / [32m200[0m 55.284 ms - 26121[0m
+[0mGET / [32m200[0m 61.935 ms - 26121[0m
+[0mGET / [32m200[0m 67.789 ms - 26121[0m
+[0mGET / [32m200[0m 86.312 ms - 26121[0m
+[0mGET / [32m200[0m 69.439 ms - 26121[0m
+[0mGET / [32m200[0m 61.153 ms - 26077[0m
+[0mGET / [32m200[0m 52.072 ms - 26176[0m
+[0mGET /comments/destroy/5fe63460595ca79b2086446e [32m200[0m 11.934 ms - 79[0m
+[0mGET / [32m200[0m 110.447 ms - 25100[0m
+[0mPOST /comments/create [32m200[0m 36.594 ms - 389[0m
+[0mGET /%3C%=%20assetPath('images/man.svg')%%3E [33m404[0m 74.999 ms - 192[0m
+[0mGET / [32m200[0m 64.150 ms - 26183[0m
+[0mGET / [32m200[0m 211.257 ms - 26183[0m
+[0mGET /comments/destroy/5fe63dfc862affa2f24614ba [32m200[0m 25.274 ms - 79[0m
+[0mPOST /comments/create [32m200[0m 28.198 ms - 385[0m
+[0mGET / [32m200[0m 146.549 ms - 26175[0m
+[0mPOST /comments/create [32m200[0m 35.087 ms - 386[0m
+[0mGET / [32m200[0m 233.000 ms - 27251[0m
+[0mGET /comments/destroy/5fe63e555d28d0a3491af1fd [32m200[0m 26.227 ms - 79[0m
+[0mGET /comments/destroy/5fe63ef04f9cbca3bfae7dd3 [32m200[0m 16.810 ms - 79[0m
+[0mPOST /comments/create [32m200[0m 27.237 ms - 385[0m
+[0mGET / [32m200[0m 106.156 ms - 26175[0m
+[0mPOST /likes/toggle/?id=5fe62f57e10cc49533eab1ea&type=Post [32m200[0m 20.464 ms - 111[0m
+[0mPOST /likes/toggle/?id=5fe62f57e10cc49533eab1ea&type=Post [32m200[0m 18.206 ms - 111[0m
+[0mPOST /posts/create [32m200[0m 14.397 ms - 317[0m
+[0mPOST /likes/toggle/?id=5fe641527ccdf0a4562e00b4&type=Post [32m200[0m 13.018 ms - 111[0m
+[0mPOST /likes/toggle/?id=5fe641527ccdf0a4562e00b4&type=Post [32m200[0m 13.166 ms - 111[0m
+[0mPOST /posts/create [32m200[0m 10.623 ms - 317[0m
+[0mGET /posts/destroy/5fe641597ccdf0a4562e00b8 [32m200[0m 18.979 ms - 72[0m
+[0mGET /posts/destroy/5fe641527ccdf0a4562e00b4 [32m200[0m 13.209 ms - 72[0m
+[0mPOST /posts/create [32m200[0m 10.727 ms - 301[0m
+[0mPOST /posts/create [32m200[0m 9.713 ms - 301[0m
+[0mGET /posts/destroy/5fe641737ccdf0a4562e00ba [32m200[0m 13.642 ms - 72[0m
+[0mGET /posts/destroy/5fe641727ccdf0a4562e00b9 [32m200[0m 19.030 ms - 72[0m
+[0mGET /users/sign-out [36m302[0m 14.692 ms - 46[0m
+[0mGET / [32m200[0m 80.017 ms - 17323[0m
+[0mGET /users/sign-in [32m200[0m 7.421 ms - 1861[0m
+[0mGET /users/sign-up [32m200[0m 6.296 ms - 1950[0m
+[0mGET /users/sign-in [36m304[0m 6.076 ms - -[0m
+[0mGET / [32m200[0m 37.333 ms - 17146[0m
+[0mGET /users/sign-in [36m304[0m 4.046 ms - -[0m
+[0mPOST /users/create-session [36m302[0m 8.342 ms - 46[0m
+[0mGET / [32m200[0m 58.940 ms - 26355[0m
+[0mPOST /likes/toggle/?id=5fe6393f85aa109d550491fb&type=Comment [32m200[0m 14.426 ms - 114[0m
+[0mPOST /likes/toggle/?id=5fe6393f85aa109d550491fb&type=Comment [32m200[0m 12.947 ms - 114[0m
+[0mGET / [32m200[0m 84.906 ms - 26175[0m
+[0mGET /users/profile/5f8589046d36ebfacee702fc [32m200[0m 11.597 ms - 2271[0m
+[0mGET / [36m304[0m 50.492 ms - -[0m
+[0mGET /users/profile/5f85dd9765f94514682b3ddc [32m200[0m 13.911 ms - 1972[0m

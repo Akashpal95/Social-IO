@@ -2,7 +2,7 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 const Like = require('../models/like');
 
-module.exports.create = async function(req, res) {
+module.exports.create = async function (req, res) {
   if (req.isAuthenticated()) {
     try {
       let post = await Post.create({
@@ -14,7 +14,8 @@ module.exports.create = async function(req, res) {
         return res.status(200).json({
           data: {
             post: post,
-            username: req.user.name
+            username: req.user.name,
+            user_id: req.user._id
           },
           message: 'Post Created!!'
         });
@@ -33,7 +34,7 @@ module.exports.create = async function(req, res) {
     return res.redirect('back');
   }
 };
-module.exports.destroy = async function(req, res) {
+module.exports.destroy = async function (req, res) {
   try {
     let post = await Post.findById(req.params.id).populate('comments');
     console.log('POST : ', post);

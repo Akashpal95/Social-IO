@@ -1,12 +1,12 @@
 const Like = require("../models/like");
 const Post = require("../models/post");
 const Comment = require("../models/comment");
-module.exports.toggleLikeCheck = function(req, res) {
+module.exports.toggleLikeCheck = function (req, res) {
   console.log("Like Toggled!!");
   console.log(req.query);
   return res.redirect("back");
 };
-module.exports.toggleLike = async function(req, res) {
+module.exports.toggleLike = async function (req, res) {
   try {
     //likes/toggle/?id=abcdef&type=Post
     let likeable;
@@ -47,7 +47,8 @@ module.exports.toggleLike = async function(req, res) {
         message: "Like Request Successfull!",
         data: {
           likesNum: likeable.likes.length,
-          id: req.query.id
+          id: req.query.id,
+          likeable: req.query.type
         }
       });
     }

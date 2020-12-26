@@ -7,7 +7,7 @@ const commentsMailer = require('../mailers/comments_mailer');
 const queue = require('../config/kue');
 const commentEmailWorker = require('../workers/comment_email_worker');
 
-module.exports.create = async function(req, res) {
+module.exports.create = async function (req, res) {
   // console.log(req);
   //Find the post where the comment was written
   try {
@@ -27,7 +27,7 @@ module.exports.create = async function(req, res) {
         .execPopulate();
 
       //commentsMailer.newComment(comment);
-      let job = queue.create('emails', comment).save(function(err) {
+      let job = queue.create('emails', comment).save(function (err) {
         if (err) {
           console.log('Error in creating a queue : ', err);
         }
@@ -38,7 +38,8 @@ module.exports.create = async function(req, res) {
         return res.status(200).json({
           data: {
             comment: comment,
-            username: req.user.name
+            username: req.user.name,
+            user_id: req.user._id
           },
           message: 'Comment created!'
         });
@@ -53,7 +54,7 @@ module.exports.create = async function(req, res) {
     return;
   }
 };
-module.exports.destroy = async function(req, res) {
+module.exports.destroy = async function (req, res) {
   try {
     let comment = await Comment.findById(req.params.id);
 

@@ -1,21 +1,33 @@
 <li id="comment-<%= comment._id%>">
   <p>
-    <% if((locals.user) && (locals.user.id == comment.user.id)){%>
-    <small>
-      <a class="delete-comment-button" href="/comments/destroy/<%=comment.id%>"
-        >X</a
-      >
-    </small>
-    <%}%>
-    <small>
-        <%= comment.user.name%> says :
-    </small>
-    <%=comment.content%>
-    <% if(locals.user){%>
-        <form class="like-button-form" action="/likes/toggle/?id=<%=comment.id%>&type=Comment" method="POST">
-            <span id="like-<%=comment.id%>"><%=comment.likes.length%></span>&nbsp;<button type="submit" >Like</button>
-        </form>
-    <%}%>
+    <div class="user-card">
+      <img class="profile-pic-micro" src="<%= assetPath('images/man.svg')%>">
+      <p>
+        <a href="/users/profile/<%= post.user.id%>"><%=comment.user.name%></a>
+      </p>
+      <div class="options-container">
+        <% if((locals.user) && (locals.user.id == comment.user.id)){%>
+        <div class="more-container">
+          <a class="delete-comment-button" href="/comments/destroy/<%=comment.id%>">Delete</a>
+        </div>
+        <%}%>
+              <div class="more-container">
+                  <img src="https://www.flaticon.com/svg/static/icons/svg/1828/1828687.svg">
+              </div>
+          </div>
+  
+      </div>
+    <div class="post-content-container">
+        <%=comment.content%>
+      </div>
+
+      <% if(locals.user){%>
+      <form class="like-button-form" action="/likes/toggle/?id=<%=comment.id%>&type=Comment" method="POST">
+        <span class="like-view" id="like-<%=comment.id%>"><%=comment.likes.length%> people liked this comment</span>
+        &nbsp;
+        <button type="submit"><i class="far fa-thumbs-up"></i></button>
+      </form>
+      <%}%>
     <br />
   </p>
 </li>
