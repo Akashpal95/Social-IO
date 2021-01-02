@@ -1,0 +1,27 @@
+header {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  background-color: var(--darkblack);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  header a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px; }
+  header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-right: 20px;
+    font-weight: 100;
+    font-size: 1rem;
+    padding-inline-start: 0 !important; }
