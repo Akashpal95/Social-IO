@@ -1,6 +1,6 @@
 html {
-  background-color: var(--lightblack); }
-
+  background-color: var(--lightblack);
+}
 #sign-in-container {
   max-width: 70vw;
   /* height:70vh; */
@@ -12,46 +12,46 @@ html {
   justify-content: space-evenly;
   background-color: var(--black);
   padding: 10px;
-  color: var(--lightorange); }
-
+  color: var(--lightorange);
+}
 #sign-in-img {
   width: 300px;
-  height: 300px; }
-
+  height: 300px;
+}
 #left-container {
   display: flex;
   flex-direction: column;
-  align-items: center; }
-
+  align-items: center;
+}
 #right-container {
   display: flex;
   flex-direction: column;
   width: 50%;
-  align-items: center; }
-
+  align-items: center;
+}
 #google-login-button {
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 #sign-in-form {
-  width: 90%; }
-
+  width: 90%;
+}
 .md-form {
-  margin-bottom: 10px; }
-
+  margin-bottom: 10px;
+}
 .btn {
   background-color: #575989;
-  color: white; }
-
+  color: white;
+}
 .btn:hover {
   background-color: #3f3d55;
-  color: white; }
-
+  color: white;
+}
 .hidden {
-  visibility: hidden; }
-
+  visibility: hidden;
+}
 .show {
-  visibility: initial; }
-
+  visibility: initial;
+}
 input {
   display: block;
   height: calc(1.5em + 0.75rem + 2px);
@@ -64,10 +64,11 @@ input {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
-
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 input {
-  width: 100%; }
+  width: 100%;
+}
 
 input[type='text'],
 input[type='email'],
@@ -77,7 +78,8 @@ input[type='password'] {
   border: none;
   border-radius: 2px;
   background-color: var(--lightblack) !important;
-  color: var(--gray) !important; }
+  color: var(--gray) !important;
+}
 
 input[type='text']:focus,
 input[type='email']:focus,
@@ -87,28 +89,35 @@ input[type='password']:focus {
   border: none;
   border-radius: 2px;
   background-color: var(--lightblack) !important;
-  color: var(--gray) !important; }
+  color: var(--gray) !important;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset !important; }
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 
 a,
 a:hover,
 a:focus,
 a:active {
   text-decoration: none;
-  color: inherit; }
-
+  color: inherit;
+}
 #btnSubmit {
-  background-image: linear-gradient(to right, var(--red), var(--lightorange)); }
+  background-image: linear-gradient(to right, var(--red), var(--lightorange));
+}
 
 @media screen and (max-width: 900px) {
   #left-container {
-    display: none; }
+    display: none;
+  }
   #sign-in-container {
-    max-width: 90vw; }
+    max-width: 90vw;
+  }
   #right-container {
-    width: 70%; } }
+    width: 70%;
+  }
+}
