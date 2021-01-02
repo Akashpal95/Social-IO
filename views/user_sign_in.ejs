@@ -1,15 +1,51 @@
-<h1>Sign In</h1>
-
-<form action="/users/create-session" method="POST">
-    <input type="email" name="email" placeholder="Email"  required>
-    <input type="password" name="password" placeholder="Password"  required>
-    <input type="submit" value="Sign In">
-
-</form>
-
-<p>
-    <a href="/users/auth/google">Google SignIn/SignUp</a>
-</p>
-<p>
-    <a href="/users/forgot-password">Forgot Password?</a>
-</p>
+<link rel="stylesheet" href="<%= assetPath('css/user_sign_in.css')%>" />
+<div id="sign-in-container">
+  <div id="left-container">
+    <img
+      id="sign-in-img"
+      src="<%= assetPath('images/login.svg')%>"
+      alt="Sign In Image"
+    />
+    <a href="/users/sign-up">Create an account</a>
+  </div>
+  <div id="right-container">
+    <h3>Sign In</h3>
+    <form id="sign-in-form" action="/users/create-session" method="POST">
+      <div class="md-form">
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="md-form">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <input
+        id="btnSubmit"
+        class="btn btn-block my-4"
+        type="submit"
+        value="Sign In"
+        style="align-self: end;"
+      />
+    </form>
+    <div style="width:90%;display: flex; justify-content:space-between;">
+      <p>
+        <a href="/users/forgot-password" style="font-size: 0.8rem;"
+          >Forgot Password?</a
+        >
+      </p>
+      <a href="/users/auth/google">
+        <p id="google-login-button">
+          <span style="font-size: 0.7rem">or login with </span>
+          <img
+            src="https://image.flaticon.com/icons/svg/2965/2965278.svg"
+            alt="Google"
+            style="width:20px"
+          />
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

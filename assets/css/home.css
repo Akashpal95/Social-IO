@@ -46,7 +46,7 @@ aside {
   .add-post-card form {
     display: flex;
     align-items: flex-end; }
-  .add-post-card input[type=submit] {
+  .add-post-card input[type='submit'] {
     padding: 8px 37px;
     margin-left: 20px;
     border-radius: 5px;
@@ -67,11 +67,11 @@ aside {
 
 .new-comment-form {
   display: flex; }
-  .new-comment-form input[type=text] {
+  .new-comment-form input[type='text'] {
     padding: 10px;
     flex-grow: 2;
     border-radius: 5px; }
-  .new-comment-form input[type=submit] {
+  .new-comment-form input[type='submit'] {
     margin-left: 10px;
     border-radius: 5px;
     padding: 5px 20px;
@@ -132,7 +132,9 @@ aside {
 
 @media screen and (max-width: 600px) {
   main {
-    flex-direction: column; } }
+    flex-direction: column; }
+  main > section {
+    width: 100%; } }
 
 @media screen and (max-width: 400px) {
   main > section {

@@ -1,34 +1,42 @@
 <link rel="stylesheet" href="<%= assetPath('css/home.css')%>" />
-<link rel="stylesheet" href="<%= assetPath('css/chat_box.css')%>">
+<link rel="stylesheet" href="<%= assetPath('css/chat_box.css')%>" />
 <main id="home-container">
   <section id="feed-posts">
-
     <% if(locals.user){%>
     <div class="add-post-card">
-      <h4> Add Posts</h4>
+      <h4>Add Posts</h4>
       <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content" cols="50" rows="4" placeholder="What's on your mind?" required></textarea>
+        <textarea
+          name="content"
+          cols="50"
+          rows="4"
+          placeholder="What's on your mind?"
+          required
+        ></textarea>
         <input type="submit" value="Post" />
       </form>
     </div>
     <%}%>
-      <ul id="posts-list-container">
-        <% for(post of posts) {%> <%- include('_post.ejs');%> <%}%>
-      </ul>
+    <ul id="posts-list-container">
+      <% for(post of posts) {%> <%- include('_post.ejs');%> <%}%>
+    </ul>
   </section>
   <div class="vertical"></div>
   <aside id="people">
     <section id="friends">
       <h4>Users</h4>
       <% for (u of all_users){%>
-    <div class="user-card">
-      <img class="profile-pic-micro" src="<%= assetPath('images/man.svg')%>">
-      <p>
-        <a href="/users/profile/<%= u.id%>"><%=u.name%></a>
-      </p>
-    </div>
+      <div class="user-card">
+        <img
+          class="profile-pic-micro"
+          src="<%= assetPath('images/man.svg')%>"
+        />
+        <p>
+          <a href="/users/profile/<%= u.id%>"><%=u.name%></a>
+        </p>
+      </div>
 
-    <%}%>
+      <%}%>
     </section>
     <% if(locals.user){%>
     <hr />
@@ -36,7 +44,10 @@
       <h4>Friends</h4>
       <% for (u of friends){%>
       <div class="user-card">
-        <img class="profile-pic-micro" src="<%= assetPath('images/man.svg')%>">
+        <img
+          class="profile-pic-micro"
+          src="<%= assetPath('images/man.svg')%>"
+        />
         <p>
           <a href="/users/profile/<%= u.id%>"><%=u.name%></a>
         </p>
@@ -44,20 +55,21 @@
       <%}%>
     </section>
     <%}%>
-      </aside>
-
+  </aside>
 </main>
 
 <script src="<%= assetPath('js/home_posts.js')%>"></script>
 <script src="<%= assetPath('js/home_comments.js')%>"></script>
 <script src="<%= assetPath('js/home_likes.js')%>"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"
   integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ=="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"
+></script>
 <script src="<%= assetPath('js/chat_engine.js')%>"></script>
 <% if(locals.user){%>
 <script>
-  new ChatEngine('user-chat-box', '<%= locals.user.email%>')
+  new ChatEngine('user-chat-box', '<%= locals.user.name%>');
 </script>
 <%}%>
