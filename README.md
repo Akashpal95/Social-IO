@@ -11,7 +11,7 @@ Social.IO let's you:
   3. Like other posts
   4. Delete a post
   5. Add a friend
-  6. Chat with your friends real-time in a fb Messenger like chat box.
+  6. Chat with your friends real-time in a fb Messenger like chat box( **Built using SOCKET.IO**).
 
 This project is a product of many late nights and some frustrated brain-scratching sessions. But I'm proud to have hosted the application
 in AWS, here's the link for you to visit the website and see for yourself.
