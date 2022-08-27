@@ -12,5 +12,11 @@
   "images/messenger.svg": "images/messenger-1d0c85da0f.svg",
   "images/sign-up.svg": "images/sign-up-a90f351511.svg",
   "js/user_sign_in.css": "js/user_sign_in-9ad4efc44b.css",
+  "js/user_sign_up.css": "js/user_sign_up-35e7312576.css",
+  "js/chat_engine.js": "js/chat_engine-5fb565445d.js",
+  "js/home_comments.js": "js/home_comments-ebc59deb20.js",
+  "js/home_likes.js": "js/home_likes-e8ef362464.js",
+  "js/home_posts.js": "js/home_posts-cc317f0d4e.js",
+  "js/user_sign_in.css": "js/user_sign_in-9ad4efc44b.css",
   "js/user_sign_up.css": "js/user_sign_up-35e7312576.css"
 }
